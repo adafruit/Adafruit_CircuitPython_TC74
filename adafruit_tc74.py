@@ -67,6 +67,7 @@ class TC74:
     :param address: The I2C device address for the sensor. Default is
     ``0x48``.
     """
+
     def __init__(self, i2c_bus, address=TC74_DEFAULT_ADDRESS):
         self.i2c_device = i2cdevice.I2CDevice(i2c_bus, address)
 
