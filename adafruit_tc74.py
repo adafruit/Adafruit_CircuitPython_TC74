@@ -48,22 +48,20 @@ import adafruit_bus_device.i2c_device as i2cdevice
 
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_TC74.git"
-# pylint: disable=bad-whitespace, too-few-public-methods
+# pylint: disable=too-few-public-methods
 TC74_DEFAULT_ADDRESS = 0x48
 
 TC74_REGISTER_TEMP = 0  # Temperature register (read-only)
 TC74_REGISTER_CONFIG = 1  # Configuration register
 TC74_SHUTDOWN_BIT = 7  # Shutdown bit in Configuration register
 TC74_DATA_READY_BIT = 6  # Data Ready bit in Configuration register
-
-
-# pylint: enable=bad-whitespace, too-few-public-methods
+# pylint: enable=too-few-public-methods
 
 
 class TC74:
     """
     Driver for the Microchip TC74 Digital Temperature Sensor.
-    :param ~busio.I2C i2c_bus: The I2C bus the TC74 is connected to.
+    :param i2c_bus: The I2C bus the TC74 is connected to.
     :param address: The I2C device address for the sensor. Default is
     ``0x48``.
     """
