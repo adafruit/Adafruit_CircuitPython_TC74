@@ -15,7 +15,7 @@ Implementation Notes
 
 **Hardware:**
 
-* Adafruit TC74: https://www.adafruit.com/product/4375
+* Adafruit Breadboard Friendly I2C Temperature Sensor TC74: https://www.adafruit.com/product/4375
 
 **Software and Dependencies:**
 
@@ -44,9 +44,32 @@ TC74_DATA_READY_BIT = 6  # Data Ready bit in Configuration register
 class TC74:
     """
     Driver for the Microchip TC74 Digital Temperature Sensor.
-    :param i2c_bus: The I2C bus the TC74 is connected to.
-    :param address: The I2C device address for the sensor. Default is
-    ``0x48``.
+    :param ~busio.I2C i2c_bus: The I2C bus the TC74 is connected to
+    :param int address: The I2C device address for the sensor. Default is :const:`0x48`
+
+    **Quickstart: Importing and using the TC74**
+
+        Here is an example of using the :class:`TC74` class.
+        First you will need to import the libraries to use the sensor
+
+        .. code-block:: python
+
+            import board
+            import adafruit_tc74
+
+        Once this is done you can define your `board.I2C` object and define your sensor object
+
+        .. code-block:: python
+
+            i2c = board.I2C()   # uses board.SCL and board.SDA
+            tc = adafruit_tc74.TC74(i2c)
+
+        Now you have access to the temperature using :attr:`temperature`.
+
+        .. code-block:: python
+
+            temperature = tc.temperature
+
     """
 
     def __init__(self, i2c_bus, address=TC74_DEFAULT_ADDRESS):
@@ -67,7 +90,7 @@ class TC74:
     @property
     def temperature(self):
         """
-        Returns the current temperature in degrees celsius. Resolution
-        is 1 degrees C.
+        Returns the current temperature in degrees Celsius. Resolution
+        is 1 degrees Celsius.
         """
         return self._temperature

@@ -6,7 +6,6 @@ import board
 import adafruit_tc74
 
 i2c = board.I2C()
-
 tc = adafruit_tc74.TC74(i2c)
 
 while True:

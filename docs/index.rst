@@ -26,7 +26,7 @@ Table of Contents
 .. toctree::
     :caption: Related Products
 
-.. Adafruit TC74 <https://www.adafruit.com/product/4375>
+    Adafruit TC74 <https://www.adafruit.com/product/4375>
 
 .. toctree::
     :caption: Other Links
