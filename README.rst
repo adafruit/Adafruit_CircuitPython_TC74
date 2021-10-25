@@ -68,6 +68,11 @@ Usage Example
         time.sleep(0.5)
 
 
+Documentation
+=============
+
+API documentation for this library can be found on `Read the Docs <https://circuitpython.readthedocs.io/projects/tc74/en/latest/>`_.
+
 Contributing
 ============
 
