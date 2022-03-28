@@ -44,6 +44,7 @@ TC74_DATA_READY_BIT = 6  # Data Ready bit in Configuration register
 class TC74:
     """
     Driver for the Microchip TC74 Digital Temperature Sensor.
+
     :param ~busio.I2C i2c_bus: The I2C bus the TC74 is connected to
     :param int address: The I2C device address for the sensor. Default is :const:`0x48`
 
