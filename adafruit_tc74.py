@@ -29,7 +29,7 @@ from adafruit_register.i2c_struct import ROUnaryStruct
 from adafruit_register.i2c_bit import RWBit, ROBit
 import adafruit_bus_device.i2c_device as i2cdevice
 
-__version__ = "0.0.0-auto.0"
+__version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_TC74.git"
 # pylint: disable=too-few-public-methods
 TC74_DEFAULT_ADDRESS = 0x48
