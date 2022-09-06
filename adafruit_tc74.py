@@ -29,6 +29,12 @@ from adafruit_register.i2c_struct import ROUnaryStruct
 from adafruit_register.i2c_bit import RWBit, ROBit
 import adafruit_bus_device.i2c_device as i2cdevice
 
+try:
+    import typing  # pylint: disable=unused-import
+    from busio import I2C
+except ImportError:
+    pass
+
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_TC74.git"
 # pylint: disable=too-few-public-methods
@@ -73,7 +79,7 @@ class TC74:
 
     """
 
-    def __init__(self, i2c_bus, address=TC74_DEFAULT_ADDRESS):
+    def __init__(self, i2c_bus: I2C, address: int = TC74_DEFAULT_ADDRESS) -> None:
         self.i2c_device = i2cdevice.I2CDevice(i2c_bus, address)
 
     _temperature = ROUnaryStruct(TC74_REGISTER_TEMP, "b")
@@ -89,7 +95,7 @@ class TC74:
     from the shutdown to the normal state."""
 
     @property
-    def temperature(self):
+    def temperature(self) -> int:
         """
         Returns the current temperature in degrees Celsius. Resolution
         is 1 degrees Celsius.
