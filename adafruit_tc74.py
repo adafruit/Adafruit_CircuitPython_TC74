@@ -25,26 +25,25 @@ Implementation Notes
 * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
 
-from adafruit_register.i2c_struct import ROUnaryStruct
-from adafruit_register.i2c_bit import RWBit, ROBit
 import adafruit_bus_device.i2c_device as i2cdevice
+from adafruit_register.i2c_bit import ROBit, RWBit
+from adafruit_register.i2c_struct import ROUnaryStruct
 
 try:
-    import typing  # pylint: disable=unused-import
+    import typing
+
     from busio import I2C
 except ImportError:
     pass
 
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_TC74.git"
-# pylint: disable=too-few-public-methods
 TC74_DEFAULT_ADDRESS = 0x48
 
 TC74_REGISTER_TEMP = 0  # Temperature register (read-only)
 TC74_REGISTER_CONFIG = 1  # Configuration register
 TC74_SHUTDOWN_BIT = 7  # Shutdown bit in Configuration register
 TC74_DATA_READY_BIT = 6  # Data Ready bit in Configuration register
-# pylint: enable=too-few-public-methods
 
 
 class TC74:
